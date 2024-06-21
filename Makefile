@@ -6,7 +6,7 @@
 #    By: flverge <flverge@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 15:56:52 by flverge           #+#    #+#              #
-#    Updated: 2024/04/23 15:57:43 by flverge          ###   ########.fr        #
+#    Updated: 2024/06/21 22:05:49 by flverge          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,9 @@ LIBFT_PATH = libft/
 LIBFT = $(LIBFT_PATH)$(LIBFT_NAME)
 
 # MiniLibX
-MLX_NAME = libmlx.a  
-MLX_PATH = minilibx-linux/
+MLX_FOLDER = MLX42/
+MLX_NAME = libmlx42.a
+MLX_PATH = MLX42/build/
 MLX = $(MLX_PATH)$(MLX_NAME)
 
 # cub3d files
@@ -40,7 +41,7 @@ SRC := $(wildcard $(SRC_DIR)/*.c) \
 OBJ := ${SRC:.c=.o}
 
 # Includes
-INC = -I./includes/ -I./minilibx-linux/
+INC = -I./includes/ -I./MLX42/include/
 
 # Colors
 RESET = \033[0m
@@ -65,7 +66,7 @@ $(LIBFT):
 $(MLX):
 	@$(ECHO) "$(BOLD)$(RED)🛠️      Compiling MiniLibX      🛠️$(RESET)"
 	@$(ECHO) "\n"	
-	@make all -sC $(MLX_PATH)
+	@cd $(MLX_FOLDER) && cmake -B build && cmake --build build -j4 && cd ..
 	@$(ECHO) "\n"	
 	@$(ECHO) "$(BOLD)$(GREEN)😎     MiniLibX Compiled    😎$(RESET)"
 	@$(ECHO) "\n"
@@ -75,7 +76,7 @@ $(MLX):
 $(NAME): $(OBJ)
 	@$(ECHO) "$(BOLD)$(RED)🛠️      Compiling cub3d    🛠️$(RESET)"
 	@$(ECHO) "\n"
-	@$(CC) $(CFLAGS) $(INC) $(OBJ) $(MLX) $(LIBFT) -lXext -lX11 -lm -lz -o $(NAME)
+	@$(CC) $(CFLAGS) $(INC) $(OBJ) $(MLX) $(LIBFT) -ldl -lglfw -lm -lz -pthread -o $(NAME)
 	@$(ECHO) "$(BOLD)$(GREEN)🚀      cub3d fully compiled, ready to use       🚀$(RESET)"
 	@$(ECHO) "\n"
 
@@ -83,7 +84,7 @@ clean:
 	@make clean -sC $(LIBFT_PATH)
 	@rm -f $(OBJ)
 	@$(ECHO) "$(BOLD)$(ORANGE)🌀     Cleaned .o cub3d's files   🌀$(RESET)"
-	@make clean -sC $(MLX_PATH)
+	@rm -rf $(MLX_PATH)
 	@$(ECHO) "$(BOLD)$(ORANGE)🌀     Cleaned .o MiniLibX's files  🌀$(RESET)"
 
 
