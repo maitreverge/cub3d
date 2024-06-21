@@ -1,0 +1,38 @@
+ROADMAP :
+Create a master struct with :
+- Sub struct with all mlx components
+- Sub struct with maps components
+
+add a open(texture) to check_map function
+
+
+
+TO_DO :
+
+closed map (circled with 1 only)
+There is a starting position Player 
+
+
+MAP PARSING CHECKING :
+- ❌ Must be surrounded / closed by walls (by 1)
+- ❌ Can't be separated by a new line
+- ❌ 
+- ❌ 
+- ❌ 
+- ❌ 
+
+SETTINGS PARSING CHECKING :
+- ❌ Floor and ceiling must be made of color, AND different colors
+- ❌ Can be separated by new lines
+- ❌ Arguments on a same line must be separated by at least ONE SPACE
+- ❌ 
+- ❌ 
+- ❌ 
+- ❌ 
+
+
+
+
+✅
+
+❌
