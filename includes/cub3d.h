@@ -6,7 +6,7 @@
 /*   By: flverge <flverge@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 21:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2024/06/22 13:18:52 by flverge          ###   ########.fr       */
+/*   Updated: 2024/06/22 13:22:03 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 // Linking MLX header files
 #include "../MLX42/include/MLX42/MLX42.h"
+#include "../libft/ft_printf/ft_printf.h"
+#include "../libft/get_next_line/get_next_line_bonus.h"
+#include "../libft/libft/libft.h"
+
 
 // Define libraries
 #include <unistd.h>
