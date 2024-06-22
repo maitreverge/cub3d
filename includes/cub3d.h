@@ -6,7 +6,7 @@
 /*   By: flverge <flverge@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 21:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2024/06/22 13:12:03 by flverge          ###   ########.fr       */
+/*   Updated: 2024/06/22 13:18:52 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include <math.h>
 #include <fcntl.h>
 
@@ -56,6 +57,12 @@
 
 
 // ============ UTILS ===============
+
+// libft_extras.c
+int	ft_strcmp(const char *s1, const char *s2);
+int	ft_isspace(int c);
+char	*ft_strncpy(char *dest, const char *src, size_t n);
+
 
 // parsing_utils.c
 void	print_usage(void);
