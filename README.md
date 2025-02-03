@@ -2,6 +2,8 @@
   <img src="img/cub3d.png" width="70%"/>
 </p>
 
+![Screencast](img/screencast.gif)
+
 ## 🚀 SYNOPSIS
 
 The `cub3D` project at 42 school plunges students into the captivating realm of raycasting and 3D graphics rendering within the C language. This immersive endeavor challenges students to develop a rudimentary 3D game engine capable of rendering a textured maze in a two-dimensional plane.
